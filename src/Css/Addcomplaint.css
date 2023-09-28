@@ -1,0 +1,14 @@
+.h2{
+    font-family:cursive ;
+  }
+.card{
+    padding: 1.5em .5em .5em;
+    border-radius: 2em;
+    text-align: center;
+    border-style: solid;
+    border-color: #dfab0fe0 ;
+
+}
+.label{
+    float: left;
+}

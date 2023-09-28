@@ -1,0 +1,12 @@
+.fuel_container{
+    margin: 3rem 0;
+    height: 25%;
+    background: #082344;
+    color: white;
+
+
+}
+.fuel_container h1{
+    padding: 5rem 0;
+    text-align: center;
+}

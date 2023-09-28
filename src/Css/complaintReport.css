@@ -1,0 +1,59 @@
+.my-tour-content {
+    justify-content: center;
+    padding: 20px 80px 20px 80px;
+  }
+  
+  .Post{
+    max-width: 600px;
+    width:100%;
+    display:table;
+    margin: 0 auto;
+    padding: 20px 50px;
+  }
+
+.report-card {
+  
+    margin: auto;
+    width: 600px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+      rgba(0, 0, 0, 0.06) 0px 2px 3px 0px;
+    border: 1px solid rgb(207, 206, 206);
+    border-radius: 10px;
+  }
+  
+  .report-logo {
+    height: 70px;
+    width: 100px;
+    float: left;
+  }
+
+  .report-title {
+    text-align: center;
+    font-weight: bold;
+  }
+  .reportdownload {
+    margin: auto;
+    width: 600px;
+    font-size:12px;
+    color: rgba(5, 0, 0, 0.658);
+  }
+  
+  .report-contact {
+    text-align: right;
+    font-size: x-small;
+    color: rgba(5, 0, 0, 0.658);
+    font-weight: 501;
+    font-size:13px;
+    
+  }
+  
+  #report-cont {
+    padding: 20px 20px 20px 20px;
+    color: rgba(5, 0, 0, 0.658);
+    font-weight: 620;
+    font-size:13px;
+    
+  }
+.custom{
+  width: 150px !important;
+}

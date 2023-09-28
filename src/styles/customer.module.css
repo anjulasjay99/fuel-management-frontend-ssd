@@ -1,0 +1,46 @@
+.loginWrap{
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6rem;
+
+}
+
+.loginForm{
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-style: groove;
+    padding: 3rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.form{
+    width: 30rem;
+}
+
+
+.reg{
+    margin: 3rem 0;
+    height: 25%;
+    background: #082344;
+    color: white;
+
+}
+
+.reg h1{
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.TableContainer {
+    margin-top: 3rem;
+    margin-left: 1rem;
+}
+
+

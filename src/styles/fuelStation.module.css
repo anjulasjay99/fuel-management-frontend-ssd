@@ -1,0 +1,277 @@
+.createAccWrapper {
+  height: calc(100vh - 83px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.regWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.createAccDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ff762e;
+  margin: 20px 0px 20px 0px;
+  padding: 20px 30px 20px 30px;
+  border-radius: 20px;
+  width: 80%;
+}
+
+.createAccForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ff762e;
+  margin: 20px 0px 20px 0px;
+  width: fit-content;
+  padding: 20px 30px 20px 30px;
+  border-radius: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 50px;
+  width: 100%;
+}
+
+.subTitle {
+  font-size: 20px;
+}
+
+.btnContainer {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  column-gap: 10px;
+}
+
+.section {
+  width: 45%;
+}
+
+.settingsWrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.settingsDiv {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+}
+
+.tabs {
+  width: 300px;
+  border-right: 1px solid #999999;
+}
+
+.tab {
+  cursor: pointer;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 700px;
+  border-bottom: 1px solid #999999;
+}
+
+.tabSelected {
+  cursor: pointer;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 700px;
+  border-bottom: 2px solid #999999;
+  background-color: #082344;
+  color: #fff;
+}
+
+.tabContent {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.stationSettingsDiv {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.textarea {
+  height: 200px;
+}
+
+.edit {
+  cursor: pointer;
+  color: #082344;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.infoSection {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.infoSection .name {
+  width: 25%;
+  color: #999999;
+}
+
+.infoSection .value {
+  width: 75%;
+}
+
+.status {
+  padding: 2px 10px 2px 10px;
+  border-radius: 10px;
+}
+
+.fuelReport {
+  position: relative;
+  margin: 0px 0px 0px 0px;
+  padding: 20px 0px 40px 0px;
+  border: 1px solid #ff762e;
+  min-height: 500px;
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.fuelReportHeader {
+  margin: 10px 0px 10px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fuelReportContent {
+  margin: 40px 20px 0px 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  row-gap: 20px;
+}
+
+.fuelReportSection {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.pie {
+  width: 800px !important;
+  height: 250px !important;
+}
+
+.pieImage {
+  width: 500px !important;
+  height: 250px !important;
+}
+
+.loadingReport {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: #ccc;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner {
+  width: 100px;
+  height: 100px;
+}
+
+.card {
+  cursor: pointer;
+  width: 24%;
+  min-width: 400px;
+  height: 400px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+  row-gap: 10px;
+  font-size: 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  transition: color 0.15s ease-in-out, border 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+}
+
+.card:hover {
+  border: 1px solid #ff762e;
+  color: #ff762e;
+  box-shadow: rgba(216, 160, 96, 0.932) 0px 1px 3px 0px,
+    rgba(216, 160, 96, 0.932) 0px 1px 2px 0px;
+}
+
+.card label {
+  text-align: center;
+  font-size: 18px;
+}
+
+.homeContent {
+  padding-left: 100px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  column-gap: 10px;
+}
+
+.homeContentCards {
+  padding-left: 100px;
+  padding-right: 100px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 400px));
+  column-gap: 10px;
+  row-gap: 10px;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #ff762e;
+}

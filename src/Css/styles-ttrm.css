@@ -1,0 +1,291 @@
+.bookingCard {
+  margin: auto;
+  background-color: cornflowerblue;
+  padding: 20px 20px 20px 20px;
+  color: white;
+  width: 450px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.bookingDropdown {
+  vertical-align: middle;
+  background-color: white;
+  color: black;
+  font-weight: 400;
+  width: 100%;
+  text-align: left;
+  border: none;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+}
+
+.bookingDropdownItem {
+  background-color: white;
+  color: black;
+}
+
+.bookingDropdown:hover {
+  transform: none;
+}
+
+.submitBtn {
+  width: 100%;
+}
+
+.cancelBtn {
+  float: right;
+  margin-top: 40px;
+  margin-right: 10px;
+}
+
+.bookingBody {
+  padding: 0px 20px 0px 20px;
+}
+
+.textAreaItinerary {
+  height: 400px;
+}
+
+.dropdown-booking {
+  display: inline-block;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.my-tour-content {
+  justify-content: center;
+  padding: 20px 80px 20px 80px;
+}
+
+.tour-card {
+  margin: auto;
+  padding: 10px 10px 10px 10px;
+  width: 90%;
+  border: 1px solid rgb(207, 206, 206);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  transition: 15ms linear;
+}
+
+/*.tour-card:hover {
+  transform: scale(1.007);
+}*/
+
+.tour-label-title {
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.tour-label-info {
+  margin-left: 10px;
+  font-style: italic;
+  font-weight: 1000px;
+}
+
+.tour-btn {
+  float: right;
+  margin-left: 10px;
+}
+
+.tour-label-status {
+  font-weight: bold;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.edit-booking-content {
+  justify-content: center;
+  padding: 20px 80px 20px 80px;
+}
+
+.btn-edit-booking {
+  float: right;
+  margin-left: 10px;
+}
+
+.edit-booking-form {
+  justify-content: center;
+}
+
+.tour-det-label {
+  font-size: medium;
+  font-weight: bold;
+}
+
+.tour-det-head {
+  font-weight: bold;
+}
+
+.tour-det-text {
+  margin-left: 10px;
+  font-style: italic;
+  font-weight: 1000px;
+}
+
+.booking-div {
+  padding: 0px 200px 0px 200px;
+}
+
+.user-profile-div {
+  padding: 0px 200px 0px 200px;
+}
+
+.profile-card {
+  margin: auto;
+  width: 90%;
+  border: 1px solid rgb(207, 206, 206);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  transition: 15ms linear;
+}
+
+.profile-card-blue {
+  height: 100%;
+  background-color: blue;
+  border-radius: 4px;
+  color: aliceblue;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  padding-top: 50px;
+}
+
+.profile-col-one {
+  width: 40%;
+}
+
+.profile-img {
+  height: 80px;
+  width: 80px;
+}
+
+.profile-name {
+  color: aliceblue;
+  font-size: large;
+}
+
+.chng-pwd-div {
+  padding: 0px 400px 0px 400px;
+}
+
+.unregister-div {
+  padding: 0px 300px 0px 300px;
+}
+
+.unregister-radio-div {
+  padding: 0px 22px 0px 22px;
+}
+
+.dashboard-content {
+  justify-content: center;
+  padding: 40px 200px 40px 200px;
+}
+
+.dashboard-card {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  background-color: white;
+  color: rgb(0, 0, 0);
+  font-size: xx-large;
+  font-weight: bolder;
+  border: 1px solid silver;
+  border-radius: 10px;
+  height: 400px;
+  cursor: pointer;
+  padding: 10px 30px 10px 30px;
+
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  transition: color 0.15s ease-in-out, border 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+}
+
+.dashboard-card:hover {
+  color: blue;
+  border: 2px solid blue;
+  box-shadow: rgba(96, 128, 216, 0.932) 0px 1px 3px 0px,
+    rgba(96, 128, 216, 0.932) 0px 1px 2px 0px;
+}
+
+.dashboard-card-subtitle {
+  font-size: small;
+  font-weight: normal;
+}
+
+.loader {
+  margin: auto;
+  border: 10px solid #f3f3f3; /* Light grey */
+  border-top: 10px solid rgb(20, 40, 220); /* Blue */
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.report-card {
+  margin: auto;
+
+  width: 600px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+    rgba(0, 0, 0, 0.06) 0px 2px 3px 0px;
+  border: 1px solid rgb(207, 206, 206);
+  border-radius: 10px;
+}
+
+.report-logo {
+  height: 80px;
+  width: 300px;
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+}
+.report-title {
+  text-align: center;
+  font-weight: bold;
+}
+.report-download {
+  margin: auto;
+  width: 600px;
+}
+
+.report-contact {
+  text-align: center;
+  font-size: x-small;
+}
+
+#report-cont {
+  padding: 20px 20px 20px 20px;
+}

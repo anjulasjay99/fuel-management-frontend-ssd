@@ -24,8 +24,12 @@ function AdminLogin() {
           navigate("/admin-dashboard");
         }
       })
-      .catch((e) => {
-        alert("Incorrect Credentials!");
+      .catch((error) => {
+        if (error.response && error.response.data && error.response.data.msg) {
+          alert(error.response.data.msg); // Display the error message from the server
+        } else {
+          alert("An error occurred while logging in."); // Fallback message for other errors
+        }
       });
   };
   return (

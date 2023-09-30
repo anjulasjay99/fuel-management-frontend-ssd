@@ -18,6 +18,7 @@ function StationLogin() {
       .then((res) => {
         if (res.data.status === true) {
           sessionStorage.setItem("fsUser", JSON.stringify(res.data.userData));
+          sessionStorage.setItem("fsToken", res.data.token);
           navigate("/fuel-station-home");
         }
       })

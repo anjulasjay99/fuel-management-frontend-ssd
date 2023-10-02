@@ -15,7 +15,7 @@ function AccountSettings({ user, setuser }) {
   const updateEmail = (e) => {
     e.preventDefault();
     axios
-      .put("http://localhost:8070/fuelStations/updateEmail", {
+      .put("http://localhost:5000/fuelStations/updateEmail", {
         stationId: user.stationId,
         email,
       })
@@ -39,7 +39,7 @@ function AccountSettings({ user, setuser }) {
     if (oldpwd === user.password) {
       if (confpwd === password) {
         axios
-          .put("http://localhost:8070/fuelStations/updatePassword", {
+          .put("http://localhost:5000/fuelStations/updatePassword", {
             stationId: user.stationId,
             password,
           })

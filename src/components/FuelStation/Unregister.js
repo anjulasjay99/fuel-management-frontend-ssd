@@ -14,7 +14,7 @@ function Unregister({ user }) {
     e.preventDefault();
     if (password === user.password) {
       axios
-        .delete("http://localhost:8070/fuelStations", {
+        .delete("http://localhost:5000/fuelStations", {
           data: { stationId: user.stationId },
         })
         .then((res) => {
@@ -33,7 +33,7 @@ function Unregister({ user }) {
 
   const saveReason = () => {
     axios
-      .post("http://localhost:8070/unregisterStation", {
+      .post("http://localhost:5000/unregisterStation", {
         stationId: user.stationId,
         stationName: user.stationName,
         reason,

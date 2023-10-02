@@ -42,7 +42,7 @@ function FuelStationRegister() {
     };
 
     axios
-      .post("http://localhost:8070/fuelStations/register", data)
+      .post("http://localhost:5000/fuelStations/register", data)
       .then((res) => {
         console.log(res.data);
         alert("Registration Successful!");

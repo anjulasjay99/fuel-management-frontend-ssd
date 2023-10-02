@@ -40,7 +40,7 @@ function FuelUsage() {
 
   const getUsage = (id) => {
     axios
-      .get(`http://localhost:8070/fuelUsage/${id}`)
+      .get(`http://localhost:5000/fuelUsage/${id}`)
       .then((res) => {
         setusages(res.data.data);
       })
@@ -66,7 +66,7 @@ function FuelUsage() {
         startDate: selectedStartDate,
       };
       axios
-        .post(`http://localhost:8070/fuelUsage`, data)
+        .post(`http://localhost:5000/fuelUsage`, data)
         .then((res) => {
           alert("Success");
           getUsage(user.stationId);
@@ -95,7 +95,7 @@ function FuelUsage() {
 
   const getCustomers = () => {
     axios
-      .get("http://localhost:8070/customers")
+      .get("http://localhost:5000/customers")
       .then((res) => {
         setcustomers(res.data);
         setselectedCustomer(res.data[0]._id);
@@ -109,7 +109,7 @@ function FuelUsage() {
 
   const getFuelAllocations = (id) => {
     axios
-      .get(`http://localhost:8070/fuelAllocations/${id}`)
+      .get(`http://localhost:5000/fuelAllocations/${id}`)
       .then((res) => {
         setfuelAllocations(res.data.data);
         setselectedStartDate(res.data.data[0].startDate);

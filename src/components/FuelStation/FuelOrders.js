@@ -48,7 +48,7 @@ function FuelOrders() {
   const getSeachResults = (val, params) => {
     axios
       .get(
-        `http://localhost:8070/fuelOrders/${user.stationId}?val=${val}${params}`
+        `http://localhost:5000/fuelOrders/${user.stationId}?val=${val}${params}`
       )
       .then((res) => {
         setorders(res.data.data);
@@ -60,7 +60,7 @@ function FuelOrders() {
 
   const getOrders = (id) => {
     axios
-      .get(`http://localhost:8070/fuelOrders/${id}`)
+      .get(`http://localhost:5000/fuelOrders/${id}`)
       .then((res) => {
         setorders(res.data.data);
         console.log(orders);

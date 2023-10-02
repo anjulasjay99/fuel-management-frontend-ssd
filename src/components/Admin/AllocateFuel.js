@@ -40,7 +40,7 @@ function AllocateFuel() {
     };
 
     axios
-      .post("http://localhost:8070/fuelAllocations", data)
+      .post("http://localhost:5000/fuelAllocations", data)
       .then((res) => {
         alert("Success");
         navigate("/fuel-allocations");
@@ -94,7 +94,7 @@ function AllocateFuel() {
 
   const getCustomers = () => {
     axios
-      .get("http://localhost:8070/customers")
+      .get("http://localhost:5000/customers")
       .then((res) => {
         setcustomers(res.data);
         setselectedCustomer(res.data[0]._id);

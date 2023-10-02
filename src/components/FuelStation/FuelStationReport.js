@@ -42,7 +42,7 @@ function FuelStationReport() {
   const generateMonthlyReport = (date, stationId) => {
     axios
       .get(
-        `http://localhost:8070/fuelStationReport/monthly/generate?id=${stationId}&month=${moment(
+        `http://localhost:5000/fuelStationReport/monthly/generate?id=${stationId}&month=${moment(
           date
         ).format("MM")}&year=${moment(date).format("yyyy")}`
       )
@@ -59,7 +59,7 @@ function FuelStationReport() {
   const generateAnnualReport = (year, stationId) => {
     axios
       .get(
-        `http://localhost:8070/fuelStationReport/annual/generate?id=${stationId}&year=${year}`
+        `http://localhost:5000/fuelStationReport/annual/generate?id=${stationId}&year=${year}`
       )
       .then((res) => {
         setreportData(res.data);

@@ -14,7 +14,7 @@ function FuelStationCreateAccount() {
   const submit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:8070/fuelStations/checkEmail", {
+      .post("http://localhost:5000/fuelStations/checkEmail", {
         email,
       })
       .then((res) => {

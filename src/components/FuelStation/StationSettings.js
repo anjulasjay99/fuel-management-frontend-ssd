@@ -35,7 +35,7 @@ function StationSettings({ user, setuser }) {
     };
 
     axios
-      .put("http://localhost:8070/fuelStations/updateInfo", data)
+      .put("http://localhost:5000/fuelStations/updateInfo", data)
       .then((res) => {
         alert(res.data.msg);
         const usr = {

@@ -1,7 +1,6 @@
-import { React } from "react";
+import { React, useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Icon from "react-crud-icons";
 import Updatecomplaints from "./components/complaintManagement/updatecomplaints";
 import FuelStationCreateAccount from "./components/FuelStation/FuelStationCreateAccount";
 import FuelStationRegister from "./components/FuelStation/FuelStationRegister";
@@ -13,7 +12,6 @@ import Viewcomplaints from "./components/complaintManagement/viewcomplaints";
 import CustomerRegistration from "./components/CustomerManagement/CustomerRegistration";
 import CustomerProfile from "./components/CustomerManagement/CustomerProfile";
 
-import LoginCustomer from "./components/CustomerManagement/LoginCustomer";
 import AddVehicle from "./components/CustomerManagement/CustomerAddVehicle";
 import ViewVehicles from "./components/CustomerManagement/CustomerViewVehicles";
 import CustomerReport from "./components/CustomerManagement/CustomerReport";
@@ -36,8 +34,36 @@ import Dashboard from "./components/Common/Dashboard";
 import AdminDashboard from "./components/Common/AdminDashboard";
 import FuelBookings from "./components/FuelBooking/FuelBookings";
 import FuelBookingReqs from "./components/FuelBooking/FuelBookingReq";
+import LoginCustomer from "./components/CustomerManagement/LoginCustomer";
 
-function App() {
+const App = () => {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const getUser = () => {
+      fetch("http://localhost:5000/auth/login/success", {
+        method: "GET",
+        credentials: "include",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Credentials": true,
+        },
+      })
+        .then((response) => {
+          if (response.status === 200) return response.json();
+          throw new Error("authentication has been failed!");
+        })
+        .then((resObject) => {
+          setUser(resObject.user);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
+    getUser();
+  }, []);
+
   return (
     <div>
       <BrowserRouter>
@@ -90,20 +116,22 @@ function App() {
           <Route path="/fuel-usages" element={<FuelUsage />} />
           <Route path="/admin-login" element={<AdminLogin />} />
 
-        
-          <Route path="/dashboard" element = {<Dashboard/>} exact/>
-          <Route path="/admin-dashboard" element = {<AdminDashboard/>} exact/>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/admin-dashboard" element={<AdminDashboard />} exact />
           <Route path="/navbar" element={<NavBar />} />
           <Route path="/createBooking" element={<CreateBooking />} exact />
           <Route path="/updateBooking/:id" element={<UpateBooking />} exact />
           <Route path="/fuelBookings" element={<FuelBookings />} exact />
           <Route path="/fuel-station-home" element={<FuelStationHome />} />
-          <Route path="/fuelBookingRequests" element={<FuelBookingReqs />} exact />
-          
+          <Route
+            path="/fuelBookingRequests"
+            element={<FuelBookingReqs />}
+            exact
+          />
         </Routes>
       </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;

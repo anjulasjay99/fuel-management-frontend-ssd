@@ -5,7 +5,7 @@ import common from "../../styles/common.module.css";
 import { Button, Input, Table } from "reactstrap";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import Header from '../Common/Header';
+import Header from "../Common/Header";
 import { BsPencilSquare, BsTrash } from "react-icons/bs";
 
 function FuelBookings() {
@@ -25,27 +25,28 @@ function FuelBookings() {
   };
 
   function updateBkg(booking) {
-    console.log(booking._id)
-    navigate(`/updateBooking/${booking._id}`)
+    console.log(booking._id);
+    navigate(`/updateBooking/${booking._id}`);
   }
 
   const deleteBkg = (booking) => {
-    console.log(booking)
-    axios.delete(`http://localhost:8070/fuelBookings/delete/${booking._id}`).then((data) => {
-      console.log(data);
-      window.location.reload();
-      alert("Booking Successfully Deleted");
-    }).catch((err) => {
-      console.log(err);
-      alert(err);
-    })
-  }
+    console.log(booking);
+    axios
+      .delete(`http://localhost:5000/fuelBookings/delete/${booking._id}`)
+      .then((data) => {
+        console.log(data);
+        window.location.reload();
+        alert("Booking Successfully Deleted");
+      })
+      .catch((err) => {
+        console.log(err);
+        alert(err);
+      });
+  };
 
   const getBkgSeach = (val) => {
     axios
-      .get(
-        `http://localhost:8070/fuelBookings/${email}?val=${val}`
-      )
+      .get(`http://localhost:5000/fuelBookings/${email}?val=${val}`)
       .then((res) => {
         setBookings(res.data.data);
       })
@@ -56,7 +57,7 @@ function FuelBookings() {
 
   const getBookings = (id) => {
     axios
-      .get(`http://localhost:8070/fuelBookings/${id}`)
+      .get(`http://localhost:5000/fuelBookings/${id}`)
       .then((res) => {
         setBookings(res.data.data);
         console.log(bookings);
@@ -126,9 +127,7 @@ function FuelBookings() {
               />
             </div>
             <div>
-              <Button
-                className={common.btnPrimary}
-                onClick={createNewBkg} >
+              <Button className={common.btnPrimary} onClick={createNewBkg}>
                 Create Booking
               </Button>
             </div>
@@ -151,46 +150,82 @@ function FuelBookings() {
             <tbody>
               {bookings.length > 0
                 ? bookings.map((booking, index) => {
-                  return (
-                    <tr>
-                      <td>{index + 1}</td>
-                      <td>{booking.bookingId}</td>
-                      <td>{booking.vehicleType}</td>
-                      <td>{booking.vehicleNo}</td>
-                      <td>{booking.stationName}</td>
-                      <td>{booking.bkgDate}</td>
-                      <td>{booking.litres}</td>
-                      <td>
-                        <span
-                          style={{
-                            background:
-                              booking.status === "Approved"
-                                ? "#43a047"
-                                : booking.status === "Rejected"
+                    return (
+                      <tr>
+                        <td>{index + 1}</td>
+                        <td>{booking.bookingId}</td>
+                        <td>{booking.vehicleType}</td>
+                        <td>{booking.vehicleNo}</td>
+                        <td>{booking.stationName}</td>
+                        <td>{booking.bkgDate}</td>
+                        <td>{booking.litres}</td>
+                        <td>
+                          <span
+                            style={{
+                              background:
+                                booking.status === "Approved"
+                                  ? "#43a047"
+                                  : booking.status === "Rejected"
                                   ? "#e53935"
                                   : "#f9a825",
-                          }}
-                          className={styles.status}
-                        >
-                          {booking.status}
-                        </span>
-                      </td>
-                      <td>
-                        <div style={{ float: "left" }}>
-                          <div>
-                            {booking.status === "Pending"
-                              ? <div> <BsPencilSquare onClick={() => { updateBkg(booking) }} size={40} style={{ marginLeft: "5px", float: "left" }} /> Edit
-                                <BsTrash onClick={() => { deleteBkg(booking) }} size={40} style={{ marginLeft: "20px" }} /> Delete
-                              </div>
-                              : booking.status === "Rejected"
-                                ? <div><BsTrash onClick={() => { deleteBkg(booking) }} size={40} style={{ marginLeft: "94px" }} /> Delete </div>
-                                : <div><BsTrash onClick={() => { deleteBkg(booking) }} size={40} style={{ marginLeft: "94px" }} /> Delete </div>
-                            } </div>
-                        </div>
-                      </td>
-                    </tr>
-                  );
-                })
+                            }}
+                            className={styles.status}
+                          >
+                            {booking.status}
+                          </span>
+                        </td>
+                        <td>
+                          <div style={{ float: "left" }}>
+                            <div>
+                              {booking.status === "Pending" ? (
+                                <div>
+                                  {" "}
+                                  <BsPencilSquare
+                                    onClick={() => {
+                                      updateBkg(booking);
+                                    }}
+                                    size={40}
+                                    style={{ marginLeft: "5px", float: "left" }}
+                                  />{" "}
+                                  Edit
+                                  <BsTrash
+                                    onClick={() => {
+                                      deleteBkg(booking);
+                                    }}
+                                    size={40}
+                                    style={{ marginLeft: "20px" }}
+                                  />{" "}
+                                  Delete
+                                </div>
+                              ) : booking.status === "Rejected" ? (
+                                <div>
+                                  <BsTrash
+                                    onClick={() => {
+                                      deleteBkg(booking);
+                                    }}
+                                    size={40}
+                                    style={{ marginLeft: "94px" }}
+                                  />{" "}
+                                  Delete{" "}
+                                </div>
+                              ) : (
+                                <div>
+                                  <BsTrash
+                                    onClick={() => {
+                                      deleteBkg(booking);
+                                    }}
+                                    size={40}
+                                    style={{ marginLeft: "94px" }}
+                                  />{" "}
+                                  Delete{" "}
+                                </div>
+                              )}{" "}
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    );
+                  })
                 : "No data available"}
             </tbody>
           </Table>

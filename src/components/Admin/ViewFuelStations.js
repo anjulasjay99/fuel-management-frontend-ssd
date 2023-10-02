@@ -64,7 +64,7 @@ function ViewFuelStations() {
 
   const getSeachResults = (val, params) => {
     axios
-      .get(`http://localhost:8070/fuelStations?val=${val}${params}`)
+      .get(`http://localhost:5000/fuelStations?val=${val}${params}`)
       .then((res) => {
         setdata(res.data.data);
       })
@@ -75,7 +75,7 @@ function ViewFuelStations() {
 
   const getStations = () => {
     axios
-      .get("http://localhost:8070/fuelStations")
+      .get("http://localhost:5000/fuelStations")
       .then((res) => {
         setdata(res.data.data);
         setselecteStaion(res.data.data[0]);

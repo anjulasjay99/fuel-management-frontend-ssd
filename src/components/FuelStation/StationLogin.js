@@ -14,7 +14,7 @@ function StationLogin() {
   const submit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:8070/fuelStations/login", { email, password })
+      .post("http://localhost:5000/fuelStations/login", { email, password })
       .then((res) => {
         if (res.data.status === true) {
           sessionStorage.setItem("fsUser", JSON.stringify(res.data.userData));

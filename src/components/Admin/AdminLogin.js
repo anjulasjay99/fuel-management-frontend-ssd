@@ -14,7 +14,7 @@ function AdminLogin() {
   const submit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:8070/admin/login", { email, password })
+      .post("http://localhost:5000/admin/login", { email, password })
       .then((res) => {
         if (res.data.status === true) {
           sessionStorage.setItem(

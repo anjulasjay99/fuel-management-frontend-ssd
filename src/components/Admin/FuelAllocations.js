@@ -32,7 +32,7 @@ function FuelAllocations() {
 
   const getAllocations = async () => {
     await axios
-      .get(`http://localhost:8070/fuelAllocations`)
+      .get(`http://localhost:5000/fuelAllocations`)
       .then((res) => {
         setallocations(res.data.data);
         setStartDates(res.data.data);

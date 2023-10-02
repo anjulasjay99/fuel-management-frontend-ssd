@@ -43,7 +43,7 @@ function PlaceFuelOrder() {
     console.log(data);
 
     axios
-      .post("http://localhost:8070/fuelOrders", data)
+      .post("http://localhost:5000/fuelOrders", data)
       .then((res) => {
         alert("Successful!");
       })
@@ -64,7 +64,7 @@ function PlaceFuelOrder() {
 
   const calcPayemnt = (type, amount) => {
     axios
-      .post("http://localhost:8070/fuelOrders/calculatePayment", {
+      .post("http://localhost:5000/fuelOrders/calculatePayment", {
         type,
         amount,
       })
@@ -152,7 +152,6 @@ function PlaceFuelOrder() {
               <Label className={styles.name}>Location</Label>
               <Label className={styles.value}>
                 {`${user.address}, ${user.city}, ${user.province}, ${user.zipCode}`}
-              
               </Label>
             </div>
             <div className={styles.infoSection}>

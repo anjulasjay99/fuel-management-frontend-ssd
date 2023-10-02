@@ -15,6 +15,9 @@ function Unregister({ user }) {
     if (password === user.password) {
       axios
         .delete("http://localhost:8070/fuelStations", {
+          headers: {
+            "x-access-token": sessionStorage.getItem("fsToken"),
+          },
           data: { stationId: user.stationId },
         })
         .then((res) => {

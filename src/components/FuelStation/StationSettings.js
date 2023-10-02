@@ -34,8 +34,14 @@ function StationSettings({ user, setuser }) {
       ownerEmail,
     };
 
-    axios
-      .put("http://localhost:8070/fuelStations/updateInfo", data)
+    axios({
+      method: "PUT",
+      url: "http://localhost:8070/fuelStations/updateInfo",
+      headers: {
+        "x-access-token": sessionStorage.getItem("fsToken"),
+      },
+      data,
+    })
       .then((res) => {
         alert(res.data.msg);
         const usr = {

@@ -14,11 +14,17 @@ function AccountSettings({ user, setuser }) {
 
   const updateEmail = (e) => {
     e.preventDefault();
-    axios
-      .put("http://localhost:8070/fuelStations/updateEmail", {
+    axios({
+      method: "PUT",
+      url: "http://localhost:8070/fuelStations/updateEmail",
+      headers: {
+        "x-access-token": sessionStorage.getItem("fsToken"),
+      },
+      data: {
         stationId: user.stationId,
         email,
-      })
+      },
+    })
       .then((res) => {
         alert(res.data.msg);
         const usr = {
@@ -38,11 +44,17 @@ function AccountSettings({ user, setuser }) {
     e.preventDefault();
     if (oldpwd === user.password) {
       if (confpwd === password) {
-        axios
-          .put("http://localhost:8070/fuelStations/updatePassword", {
+        axios({
+          method: "PUT",
+          url: "http://localhost:8070/fuelStations/updatePassword",
+          headers: {
+            "x-access-token": sessionStorage.getItem("fsToken"),
+          },
+          data: {
             stationId: user.stationId,
             password,
-          })
+          },
+        })
           .then((res) => {
             alert(res.data.msg);
             const usr = {

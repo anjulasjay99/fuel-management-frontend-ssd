@@ -42,8 +42,17 @@ function PlaceFuelOrder() {
 
     console.log(data);
 
-    axios
-      .post("http://localhost:5000/fuelOrders", data)
+    const token = sessionStorage.getItem("fsToken");
+    console.log(token);
+
+    axios({
+      method: "POST",
+      url: "http://localhost:5000/fuelOrders",
+      headers: {
+        "x-access-token": token,
+      },
+      data,
+    })
       .then((res) => {
         alert("Successful!");
       })
